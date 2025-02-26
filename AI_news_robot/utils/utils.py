@@ -2,10 +2,21 @@ from datetime import datetime
 from dateutil import parser
 import requests
 import json
+import yaml
+import os
 
 def load_config():
-    with open('config.json', 'r') as f:
-        return json.load(f)
+    """Load config from yaml file and return Config instance"""
+    config_file_path = os.getenv(
+        "FAWKES_CONFIG_FILE_PATH",
+        os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "config.yaml"),
+    )
+
+    with open(config_file_path, "r") as f:
+        cfg = yaml.safe_load(f)
+
+    return cfg
+
 
 def is_date_today(date_str: str) -> bool:
     try:

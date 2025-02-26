@@ -1,0 +1,9 @@
+selenium
+webdriver_manager
+requests
+beautifulsoup4
+python-dateutil
+schedule
+openai
+requests_toolbelt
+pydantic 

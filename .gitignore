@@ -2,5 +2,5 @@ __pycache__
 .gitlab-ci.yml
 .gitkeep
 .DS_Store
-config.json
+config
 

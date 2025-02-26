@@ -38,29 +38,24 @@
 
 ## 配置说明
 
-创建`config.json`文件，包含以下配置项：
+在项目根目录创建`config.yaml`文件，包含以下配置项：
 
-```json
-{
-    "feishu_webhook": {
-        "group": "https://open.feishu.cn/open-apis/bot/v2/hook/your-group-webhook",
-        "test": "https://open.feishu.cn/open-apis/bot/v2/hook/your-test-webhook"
-    },
-    "openai": {
-        "api_key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "base_url": "https://api.openai.com/v1",
-        "model": "gpt-4-turbo-preview"
-    },
-    "serper": {
-        "api_key": "your-serper-api-key",
-        "base_url": "https://api.serper.dev/search"
-    },
-    "schedule": {
-        "time": "08:00",
-        "timezone": "Asia/Shanghai"
-    }
+```yaml
+feishu_webhook:
+  group: https://open.feishu.cn/open-apis/bot/v2/hook/your-group-webhook
+  test: https://open.feishu.cn/open-apis/bot/v2/hook/your-test-webhook
 
-}
+openai:
+  api_key: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  base_url: https://api.openai.com/v1
+  model: gpt-4o-08-06
+
+serper:
+  api_key: your-serper-api-key
+  base_url: https://api.serper.dev/search
+
+schedule:
+  time: "08:00"
 ```
 
 ### 配置项说明

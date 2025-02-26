@@ -1,6 +1,7 @@
 from scrappers import *
 from news_robot import news_robot
 from datetime import datetime, timedelta
+from utils.utils import load_config
 import schedule
 import time
 
@@ -51,7 +52,7 @@ if __name__ == "__main__":
     job(webhook=test_url)
 
     # 设置定时任务
-    schedule.every().day.at(config['schedule_time']).do(job, webhook=ai_group_url)
+    schedule.every().day.at(config['schedule']['time']).do(job, webhook=ai_group_url)
 
     # 主循环
     while True:

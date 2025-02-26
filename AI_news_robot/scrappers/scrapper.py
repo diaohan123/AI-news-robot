@@ -6,6 +6,8 @@ import json
 import platform
 import random
 import os
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class AI_scrapper:
@@ -48,9 +50,7 @@ class AI_scrapper:
                 os.path.join(current_dir, "chromedriver-linux64/chromedriver")
             )
         else:
-            service = Service(
-                os.path.join(current_dir, "chromedriver-win64/chromedriver.exe")
-            )
+            service = ChromeService(ChromeDriverManager().install())
         self.options = chromeOptions
         self.service = service
         self.config = load_config()
