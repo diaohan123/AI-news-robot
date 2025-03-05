@@ -44,22 +44,22 @@ def job(webhook: str, date: str = None):
 if __name__ == "__main__":
     config = load_config()
     # 群聊链接
-    ai_group_url = config['feishu_webhook']['group']
+    ai_group_url = config["feishu_webhook"]["group"]
     # 测试链接
-    test_url = config['feishu_webhook']['test']
+    test_url = config["feishu_webhook"]["test"]
 
     # 首次运行
     job(webhook=test_url)
 
     # 设置定时任务
-    schedule.every().day.at(config['schedule']['time']).do(job, webhook=ai_group_url)
+    schedule.every().day.at(config["schedule"]["time"]).do(job, webhook=ai_group_url)
 
     # 主循环
     while True:
         try:
             print(f'current time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
             schedule.run_pending()
-            time.sleep(59)  # 改为每分钟检查一次
+            time.sleep(60)  # 改为每分钟检查一次
         except Exception as e:
             print(f"主循环出错: {str(e)}")
-            time.sleep(59)  # 出错后等待一分钟继续
+            time.sleep(60)  # 出错后等待一分钟继续

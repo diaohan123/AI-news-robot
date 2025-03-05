@@ -1,9 +1,9 @@
 feishu_webhook:
-  group: https://open.feishu.cn/open-apis/bot/v2/hook/your-group-webhook
-  test: https://open.feishu.cn/open-apis/bot/v2/hook/99a2eca6-fc05-4a8e-a3dd-769ad65bd577
+  group: https://open.feishu.cn/open-apis/bot/v2/hook/0d42a3a8-13b9-4942-9760-ba71ec9ab02a
+  test: https://open.feishu.cn/open-apis/bot/v2/hook/aaf1ee85-6656-4870-92ec-2378352c5a03
 
 openai:
-  api_key: diaohan.ai-news-robot
+  api_key: diaohan.ai_news_robot
   base_url: https://openai-proxy.diandian.info/v1
   model: gpt-4o-08-06
 
@@ -12,4 +12,4 @@ serper:
   base_url: https://scrape.serper.dev
 
 schedule:
-  time: "08:00"
+  time: "09:55"
